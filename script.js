@@ -26,12 +26,21 @@ function addTask() {
 
     deleteButton.onclick = function () {
         listItem.remove();
+        updateTaskCount();
     };
 
     listItem.appendChild(taskSpan);
     listItem.appendChild(deleteButton);
 
     taskList.appendChild(listItem);
+    updateTaskCount();
 
     taskInput.value = "";
+}
+function updateTaskCount() {
+    const taskList = document.getElementById("taskList");
+    const taskCount = document.getElementById("taskCount");
+
+    taskCount.textContent =
+        "Total Tasks: " + taskList.children.length;
 }
