@@ -44,3 +44,9 @@ function updateTaskCount() {
     taskCount.textContent =
         "Total Tasks: " + taskList.children.length;
 }
+if (typeof module !== "undefined") {
+    module.exports = {
+        addTask,
+        updateTaskCount
+    };
+}
