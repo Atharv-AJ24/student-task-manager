@@ -1,25 +1,56 @@
-node {
+pipeline {
+    agent any
 
-    stage('Checkout') {
-        echo 'Checking out source code from GitHub...'
-        git branch: 'main',
-            url: 'https://github.com/Atharv-AJ24/student-task-manager.git'
+    tools {
+        nodejs 'Node20'
     }
 
-    stage('Install Dependencies') {
-        echo 'Installing dependencies...'
-        sh 'npm install'
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code from GitHub...'
+                git branch: 'main',
+                    url: 'https://github.com/Atharv-AJ24/student-task-manager.git'
+            }
+        }
+
+        stage('Check Node') {
+            steps {
+                sh 'node --version'
+                sh 'npm --version'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                echo 'Installing dependencies...'
+                sh 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building Student Task Manager...'
+                sh 'npm run build'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running automated tests...'
+                sh 'npm test'
+            }
+        }
     }
 
-    stage('Build') {
-        echo 'Building Student Task Manager...'
-        sh 'npm run build'
-    }
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
 
-    stage('Test') {
-        echo 'Running automated tests...'
-        sh 'npm test'
+        failure {
+            echo 'Pipeline failed. Check the console output.'
+        }
     }
-
-    echo 'Pipeline completed successfully!'
 }
+
