@@ -1,5 +1,10 @@
 node {
 
+    stage('Checkout') {
+        echo 'Checking out source code from GitHub...'
+        checkout scm
+    }
+
     stage('Install Dependencies') {
         echo 'Installing dependencies...'
         sh 'npm install'
