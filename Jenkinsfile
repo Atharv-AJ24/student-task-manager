@@ -35,10 +35,17 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Automated Testing') {
             steps {
-                echo 'Running automated tests...'
+                echo 'Running Jest automated tests...'
                 sh 'npm test'
+            }
+        }
+
+        stage('Assignment Test') {
+            steps {
+                echo 'Running assignment file verification tests...'
+                sh 'npm run assignment-test'
             }
         }
     }
@@ -53,4 +60,3 @@ pipeline {
         }
     }
 }
-

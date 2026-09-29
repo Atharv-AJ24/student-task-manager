@@ -1,3 +1,5 @@
 module.exports = {
-    testEnvironment: "jsdom"
+    testEnvironment: "jsdom",
+    testPathIgnorePatterns: ["/node_modules/", "/test.js$"]
 };
+
