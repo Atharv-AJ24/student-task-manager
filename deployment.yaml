@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: student-task-manager1
-          image: student-task-manager1:latest
+          image: task-manager:2.0
           imagePullPolicy: Never
           ports:
-            - containerPort: 80
+            - containerPort: 3000

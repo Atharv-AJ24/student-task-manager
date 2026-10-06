@@ -1,11 +1,16 @@
-FROM nginx:alpine
+FROM node:18-alpine
 
-WORKDIR /usr/share/nginx/html
+WORKDIR /app
 
+COPY package*.json ./
+
+RUN npm install --omit=dev
+
+COPY app.js .
 COPY index.html .
 COPY style.css .
 COPY script.js .
 
-EXPOSE 80
+EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
