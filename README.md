@@ -1,10 +1,10 @@
-#🎓 Student Task Manager — End-to-End DevOps Project
+# 🎓 Student Task Manager — End-to-End DevOps Project
 
 An end-to-end DevOps project that combines a Student Task Manager web application with automated testing, containerization, CI/CD, Kubernetes deployment, and monitoring using industry-standard tools.
 
 The project demonstrates how application code can move from a developer's local machine to a containerized deployment, with Jenkins automation and Prometheus and Grafana for observability.
 
-##📌 Table of Contents
+## 📌 Table of Contents
 Project Overview
 Features
 Technology Stack
@@ -22,7 +22,7 @@ Grafana Dashboards
 Useful Commands
 Troubleshooting
 Learning Outcomes
-##📖 Project Overview
+## 📖 Project Overview
 
 The Student Task Manager is a web application designed to help students organize and manage their tasks through a simple user interface.
 
@@ -30,7 +30,7 @@ This project extends the application with a DevOps workflow covering source-code
 
 The main objective is to understand how DevOps tools work together to improve the consistency, repeatability, and observability of software delivery.
 
-##✨ Features
+## ✨ Features
 Application
 Student task management through a web interface.
 HTML, CSS, and JavaScript-based frontend.
@@ -43,7 +43,7 @@ Jenkins for CI/CD automation.
 Kubernetes for application deployment and service discovery.
 Prometheus for metrics collection.
 Grafana for metrics visualization and dashboards.
-##🛠️ Technology Stack
+## 🛠️ Technology Stack
 Technology	Purpose
 HTML5	Application structure
 CSS3	Styling and responsive layout
@@ -58,7 +58,7 @@ Jenkins	Continuous Integration and Continuous Delivery
 Kubernetes	Container orchestration
 Prometheus	Metrics collection and querying
 Grafana	Monitoring dashboards and visualization
-##🏗️ Architecture
+## 🏗️ Architecture
               Developer
                   |
                   v
@@ -103,7 +103,7 @@ Grafana	Monitoring dashboards and visualization
 
 Note: The exact automation and deployment flow depends on the stages configured in Jenkinsfile and the deployment commands used in your environment.
 
-##📁 Project Structure
+## 📁 Project Structure
 student-task-manager/
 │
 ├── index.html                  # Application interface
@@ -136,8 +136,8 @@ student-task-manager/
 │
 └── README.md                   # Project documentation
 
-##🔄 How the DevOps Pipeline Works
-###Step 1: Source Code Management — Git and GitHub
+## 🔄 How the DevOps Pipeline Works
+### Step 1: Source Code Management — Git and GitHub
 
 Git tracks changes to the application and DevOps configuration. GitHub hosts the repository and makes the source code accessible to developers and the CI/CD system.
 
@@ -155,7 +155,7 @@ git push origin main
 
 A Jenkins pipeline can retrieve the latest source code from GitHub. Automatic execution on every push requires a configured webhook or another pipeline trigger.
 
-###Step 2: Dependency Management — Node.js and npm
+### Step 2: Dependency Management — Node.js and npm
 
 Node.js provides the JavaScript runtime, while npm installs dependencies and runs the scripts defined in package.json.
 
@@ -171,7 +171,7 @@ npm ci
 
 Inspect the available scripts in package.json before running application or test commands.
 
-###Step 3: Automated Testing — Jest
+### Step 3: Automated Testing — Jest
 
 Jest is used to run automated JavaScript tests and check application functionality.
 
@@ -184,7 +184,7 @@ If the project defines a separate test script or custom Jest command, use the co
 
 Automated tests help identify regressions before a new version is packaged or deployed.
 
-###Step 4: Containerization — Docker
+### Step 4: Containerization — Docker
 
 Docker packages the application and its required runtime into a container image.
 
@@ -220,7 +220,7 @@ Remove the container:
 
 docker rm student-task-manager
 
-###Step 5: Continuous Integration and Delivery — Jenkins
+### Step 5: Continuous Integration and Delivery — Jenkins
 
 Jenkins automates the software delivery workflow using the Jenkinsfile.
 
@@ -248,7 +248,7 @@ For automatic builds following GitHub pushes, configure a webhook or a supported
 
 Important: Docker Hub credentials, Kubernetes access, and webhook settings are environment-specific and must be configured if the pipeline uses them.
 
-###Step 6: Container Orchestration — Kubernetes
+### Step 6: Container Orchestration — Kubernetes
 
 Kubernetes manages the application deployment and exposes it through a Service.
 
@@ -366,7 +366,7 @@ If Grafana and Prometheus run inside the same Kubernetes cluster, use the Promet
 
 Grafana dashboards display only the metrics actually collected by the configured Prometheus targets.
 
-##🚀 Application Setup
+## 🚀 Application Setup
 Prerequisites
 
 Install the tools needed for the parts of the project you want to run:
@@ -398,7 +398,7 @@ npm start
 
 If no start script exists, check package.json for the correct entry point and command.
 
-##📊 Monitoring Workflow
+## 📊 Monitoring Workflow
 
 The monitoring stack provides a central place to inspect the metrics exposed by configured targets.
 
@@ -427,7 +427,7 @@ Queries process resident memory where supported by the target.
 
 These metrics are not automatically available just because Prometheus and Grafana are deployed. The application or monitoring target must expose them, and Prometheus must scrape the correct endpoint.
 
-##🧰 Useful Commands
+## 🧰 Useful Commands
 Git
 git status
 git add .
@@ -470,7 +470,7 @@ Kubernetes pod is pending	Inspect pod events, available resources, and schedulin
 Kubernetes pod crashes	Check kubectl logs and the container configuration
 Prometheus target is down	Verify target address, port, endpoint, and network connectivity
 Grafana shows no data	Check the Prometheus data source, scrape targets, and query
-##🎯 Learning Outcomes
+## 🎯 Learning Outcomes
 
 This project demonstrates practical experience with:
 
@@ -482,7 +482,7 @@ Container orchestration and application exposure using Kubernetes.
 Metrics collection and querying using Prometheus.
 Dashboard creation and monitoring using Grafana.
 Troubleshooting across application, container, deployment, and monitoring layers.
-##🔮 Future Improvements
+## 🔮 Future Improvements
 Configure GitHub webhooks for automatic Jenkins pipeline triggers.
 Publish versioned Docker images to a container registry.
 Add health checks and readiness/liveness probes.
@@ -490,7 +490,7 @@ Add application-specific metrics and alerting rules.
 Provision Grafana dashboards and data sources automatically.
 Add security scanning and dependency vulnerability checks.
 Implement resource requests, limits, and autoscaling where appropriate.
-##👨‍💻 Author
+## 👨‍💻 Author
 
 Atharv (Atharv-AJ24)
 
